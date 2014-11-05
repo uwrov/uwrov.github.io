@@ -24,6 +24,10 @@ body {
     opacity: 0.8;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 /* Home Page Carousel */
 
 header.carousel {
@@ -53,6 +57,10 @@ header.carousel .fill {
 
 .fixed-height {
     height: 450px;
+}
+
+.fixed-height-tall {
+    height: 550px;
 }
 
 .fixed-height img {
@@ -110,5 +118,9 @@ footer {
 
     .fixed-height {
         height: 350px;
+    }
+
+    .fixed-height-tall {
+        height: 450px;
     }
 }
