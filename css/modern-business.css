@@ -28,6 +28,10 @@ body {
     font-weight: bold;
 }
 
+.justify {
+    text-align: justify;
+}
+
 /* Home Page Carousel */
 
 header.carousel {
