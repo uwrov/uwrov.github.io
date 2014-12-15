@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Threat Level Calculator</title>
+
+    <script src="../js/jquery.js"></script>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        .l {
+            display: inline-block;
+            width: 80px;
+        }
+
+        #marker {
+            position: absolute;
+            background: red;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        #threat-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #threat-table th, #threat-table td {
+            border: none;
+            padding: 1px 5px;
+        }
+
+        #threat-table th {
+            font-size: 2rem;
+        }
+
+        #threat-table td {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .threat-green {
+            color: green;
+        }
+
+        .threat-yellow {
+            color: #DD3;
+        }
+
+        .threat-red {
+            color: red;
+        }
+
+
+    </style>
+
+    <script type="text/javascript">
+        const GREEN = 0, YELLOW = 1, RED = 2;
+        const rad_convert = Math.PI / 180;
+
+        var locations = {"hibernia": {"lat": 46.7504, "lon": 48.7819, "depth": 78},
+                         "sea-rose": {"lat": 46.7895, "lon": 48.1417, "depth": 107},
+                         "terra-nova": {"lat": 46.4, "lon": 48.4, "depth": 91},
+                         "hebron": {"lat": 46.544, "lon": 48.498, "depth": 93}};
+        var iceberg = {"lat": 0, "lon": 0, "depth": 0};
+
+        function getSurfaceThreatLevel(name, berg) {
+            if (berg.depth > 1.1 * locations[name].depth) {
+                return GREEN;
+            }
+
+            var radius = 3440.0647948164; // nautical miles
+            var lat1rad = locations[name].lat * rad_convert;
+            var lat2rad = berg.lat * rad_convert;
+            var dlat = (berg.lat - locations[name].lat) * rad_convert;
+            var dlon = (berg.lon - locations[name].lon) * rad_convert;
+            
+            var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
+                    Math.cos(lat1rad) * Math.cos(lat2rad) *
+                    Math.sin(dlon / 2) * Math.sin(dlon / 2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            
+            var dist = radius * c;
+
+            if (dist < 5) {
+                return RED;
+            } else if (dist <= 10) {
+                return YELLOW;
+            } else {
+                return RED;
+            }
+        }
+
+        function getSubseaThreatLevel(name, berg) {
+            var radius = 3440.0647948164; // nautical miles
+            var lat1rad = locations[name].lat * rad_convert;
+            var lat2rad = berg.lat * rad_convert;
+            var dlat = (berg.lat - locations[name].lat) * rad_convert;
+            var dlon = (berg.lon - locations[name].lon) * rad_convert;
+            
+            var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
+                    Math.cos(lat1rad) * Math.cos(lat2rad) *
+                    Math.sin(dlon / 2) * Math.sin(dlon / 2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            
+            var dist = radius * c;
+
+            if (dist > 25) {
+                return GREEN;
+            }
+
+            if (berg.depth > 1.1 * locations[name].depth || berg.depth < .7 * locations[name].depth) {
+                return GREEN;
+            } else if (berg.depth >= .9 * locations[name].depth) {
+                return RED;
+            } else {
+                return YELLOW;
+            }
+        }
+
+        function validated(iceberg) {
+            var ret = {loc: true, depth: true};
+            if (isNaN(iceberg.lat) || isNaN(iceberg.lon) ||iceberg.lat == "" || iceberg.lon == "")
+                ret.loc = false;
+            if (isNaN(iceberg.depth) || iceberg.depth == "" || depth < 0)
+                ret.depth = false;
+            return ret;
+        }
+
+        function plotIceberg(iceberg) {
+            var latPx = (46.5 - iceberg.lat) * 287 + 456;
+            var lonPx = (48.5 - iceberg.lon) * 194 + 219;
+            $("#marker").css({
+                top: latPx,
+                left: lonPx,
+                width: "50px",
+                height: "50px",
+                opacity: "0"
+            });
+
+            $("#marker").animate({
+                width: "3px",
+                height: "3px",
+                opacity: "1"
+            });
+        }
+
+        function assessThreats(iceberg) {
+            var greenHTML = "GREEN";
+            var yellowHTML = "YELLOW";
+            var redHTML = "RED";
+
+            for (var loc in locations) {
+                var surfaceThreat = getSurfaceThreatLevel(loc, iceberg);
+                var subseaThreat = getSubseaThreatLevel(loc, iceberg);
+
+                $("#" + loc + "-surface").removeClass("therat-green threat-yellow threat-red");
+                switch (surfaceThreat) {
+                    case GREEN:
+                        $("#" + loc + "-surface").addClass("threat-green").html(greenHTML);
+                        break;
+                    case YELLOW:
+                        $("#" + loc + "-surface").addClass("threat-yellow").html(yellowHTML);
+                        break;
+                    case RED:
+                        $("#" + loc + "-surface").addClass("threat-red").html(redHTML);
+                        break;
+                }
+
+                $("#" + loc + "-subsea").removeClass("therat-green threat-yellow threat-red");
+                switch (subseaThreat) {
+                    case GREEN:
+                        $("#" + loc + "-subsea").addClass("threat-green").html(greenHTML);
+                        break;
+                    case YELLOW:
+                        $("#" + loc + "-subsea").addClass("threat-yellow").html(yellowHTML);
+                        break;
+                    case RED:
+                        $("#" + loc + "-subsea").addClass("threat-red").html(redHTML);
+                        break;
+                }
+            }
+        }
+    </script>
+
+<head>
+<body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Omni Page</h1>
+        <p class="lead">Stuff goes here</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+            <div id="map_holder" style="position:relative; width:386px">
+                <img src="../images/helper/map.png" style="">
+                <div id="marker"></div>
+            </div>
+            <br>
+            <span class="l">Latitude:</span> <input type="text" id="lat" value="46.5"> <br>
+            <span class="l">Longitude:</span> <input type="text" id="lon" value="48.5"> <br>
+            <span class="l">Depth:</span> <input type="text" id="depth" value="70"> <br>
+        </div>
+        <div class="col-md-6">
+            <h3>Threat Level</h3>
+            <hr>
+            <table id="threat-table">
+                <tr>
+                    <th style="width:24%"></th>
+                    <th style="width:38%">Subsea Assets</th>
+                    <th style="width:38%">Surface Installation</th>
+                </tr>
+                <tr>
+                    <td>Hibernia</td>
+                    <td id="hibernia-subsea">4</td>
+                    <td id="hibernia-surface">5</td>
+                </tr>
+                <tr>
+                    <td>Sea Rose</td>
+                    <td id="sea-rose-subsea">4</td>
+                    <td id="sea-rose-surface">5</td>
+                </tr>
+                <tr>
+                    <td>Terra Nova</td>
+                    <td id="terra-nova-subsea">4</td>
+                    <td id="terra-nova-surface">5</td>
+                </tr>
+                <tr>
+                    <td>Hebron</td>
+                    <td id="hebron-subsea">4</td>
+                    <td id="hebron-surface">5</td>
+                </tr>
+            </table>
+        </div>
+
+      </div>
+
+
+    </div> <!-- /container -->
+
+    <br><br><br>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#depth").trigger("change")
+        })
+
+        $("#lat, #lon, #depth").change(function() {
+            iceberg.lat = $("#lat").val();
+            iceberg.lon = $("#lon").val();
+            iceberg.depth = $("#depth").val();
+
+            var validation = validated(iceberg);
+            if (validation.loc) {
+                plotIceberg(iceberg);
+
+                if (validation.depth) {
+                    assessThreats(iceberg);
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
