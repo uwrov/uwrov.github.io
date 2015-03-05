@@ -20,12 +20,35 @@
     <!-- Custom Fonts -->
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- Hover.css -->
+    <link href="css/hover/hover.css" rel="stylesheet" type="text/css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style type="text/css">
+
+        .simple-caption {  
+            height: 30px;  
+            width: 200px;  
+            display: block;  
+            bottombottom: -30px;  
+            line-height: 25pt;  
+            text-align: center;  
+        } 
+
+        .simple-caption {  
+            -moz-transform: translateY(-100%);  
+            -o-transform: translateY(-100%);  
+            -webkit-transform: translateY(-100%);  
+            transform: translateY(-100%);  
+        } 
+
+    </style>
 
 </head>
 
@@ -173,7 +196,7 @@
                     Underwater Robotics at the University of Washington
                 </h1>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-info-circle"></i> About Us</h4>
@@ -184,15 +207,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><i class="fa fa-fw fa-users"></i> Sponsor Information</h4>
                     </div>
                     <div class="panel-body">
                         <p>
-                            We would like to thank all our sponsors with their generous help in supporting our endeavors. Without them we wouldn't have gotten this far.<br>
+                            We would like to thank all <a href="./about.html#sponsors">our sponsors</a> with their generous help in supporting our endeavors. Without them we wouldn't have gotten this far.<br>
                             <br>
+                            Our major contributors: <br> <br>
+                            <a href="http://www.ee.washington.edu/"><img src="./images/sponsor_logos/UW_EE.gif"></a>
+                            <br> <br>
                             If you would like to contribute, please contact us at <a href="mailto:uwrov@uw.edu">uwrov@uw.edu</a>.
                         </p>
                     </div>
@@ -240,24 +266,29 @@
             <div class="col-lg-12">
                 <h2 class="page-header">See more of the team</h2>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-6" style="position:relative">
                 <a href="./eris.html">
-                    <img class="img-responsive img-portfolio img-hover" src="./images/eris/thumbnail.jpg" alt="Testing from a boat">
+                    <img class="img-responsive img-portfolio hvr-sink" src="./images/eris/thumbnail.jpg" alt="Testing from a boat">
                 </a>
+                <div style="position:absolute; top:0px; z-index:-10; background-color:#4b2e83; color:white; width:94.9%; height:10%; text-align:center">Eris Dock Testing</div>
             </div>
             <div class="col-md-6 col-sm-6">
-                <a href="./regional.html">
-                    <img class="img-responsive img-portfolio img-hover" src="./images/regional/thumbnail.jpg" alt="2014 Regional Competition">
-                </a>
+                <div class="img-responsive" style="width:100%">
+                    <a href="./regional.html">
+                        <img class="img-responsive img-portfolio hvr-sink" src="./images/regional/thumbnail.jpg" alt="2014 Regional Competition">
+                    </a>
+                    <div class="img-responsive" style="position:absolute; top:0; background-color:red; max-width:100%">2014 Regional</div>
+                </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <a href="./dock_test.html">
-                    <img class="img-responsive img-portfolio img-hover" src="./images/dock/thumbnail.jpg" alt="Testing on the dock">
+                    <img class="img-responsive img-portfolio hvr-sink" src="./images/dock/thumbnail.jpg" alt="Testing on the dock">
                 </a>
+                <span class="simple-catpion">HIIIIII</span>
             </div>
             <div class="col-md-6 col-sm-6">
                 <a href="./international.html">
-                    <img class="img-responsive img-portfolio img-hover" src="./images/international/thumbnail.jpg" alt="2014 International Competition">
+                    <img class="img-responsive img-portfolio hvr-sink" src="./images/international/thumbnail.jpg" alt="2014 International Competition">
                 </a>
             </div>
         </div>
