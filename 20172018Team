@@ -99,15 +99,13 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li class="active">
-
-                        <a href="about.html">2013 - 2014 team</a>
-
+                        <a href="20172018Team.html">2017 - 2018 Team</a>
                     </li>
-
                     <li>
-
+                        <a href="20132014Team.html">2013 - 2014 Team</a>
+                    </li>
+                    <li>
                         <a href="contact.html">Contact</a>
-
                     </li>
 
                     <li class="dropdown">
