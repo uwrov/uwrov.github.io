@@ -64,7 +64,7 @@ header.carousel .fill {
 }
 
 .fixed-height-tall {
-    height: 80%;
+    height: 450px;
 }
 
 .fixed-height img {
@@ -125,6 +125,6 @@ footer {
     }
 
     .fixed-height-tall {
-        height: 450px;
+        height: 80%;
     }
 }
