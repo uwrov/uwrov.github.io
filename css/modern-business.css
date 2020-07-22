@@ -99,7 +99,12 @@ header.carousel .fill {
 /* Footer Styles */
 
 footer {
-    margin: 50px 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 6px;
+    background-color: rgb(51, 0, 111);
+    color: rgb(232, 211, 162);
 }
 
 /* Responsive Styles */
