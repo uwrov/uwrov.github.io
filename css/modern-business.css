@@ -121,6 +121,23 @@ footer {
     color: rgb(232, 211, 162);
 }
 
+/* Sponsor Images */
+#sponsor-one {
+    float: right;
+    width: 55%;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#sponsor-two {
+    float: right;
+    width: 55%;
+    margin-left: 20px;
+    margin-bottom: 60px;
+    margin-top: 5px;
+}
+
 /* Responsive Styles */
 
 @media screen and (max-width:991px) {
@@ -145,5 +162,13 @@ footer {
 
     .fixed-height-tall {
         height: 240px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #sponsor-one, #sponsor-two {
+        float: none;
+        width: 90%;
+        margin: 5% 5% 0 5%;
     }
 }
