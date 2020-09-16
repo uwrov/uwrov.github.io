@@ -15,119 +15,43 @@ document.write(
     '<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">'+
         '<ul class="nav navbar-nav navbar-right">'+
             '<li>'+
+                '<a href="20192020Team.html">Our Team</a>'+
+            '</li>'+
+            '<li>'+
                 '<a href="sponsors.html">Sponsors</a>'+
             '</li>'+
             '<li>'+
                 '<a href="recruitment.html">Recruitment</a>'+
             '</li>'+
             '<li>'+
-                '<a href="contact.html">Contact</a>'+
+                '<a href="community.html">Community</a>'+
             '</li>'+
             '<li class="dropdown">'+
-                '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Team <b class="caret"></b></a>'+
+                '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Our ROVs <b class="caret"></b></a>'+
                 '<ul class="dropdown-menu">'+
                     '<li>'+
-                        '<a href="20192020Team.html">2019 - 2020 Team</a>'+
+                        '<a href = "Nautilus.html">Nautilus - 2019</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="20182019Team.html">2018 - 2019 Team</a>'+
+                        '<a href="manta.html">Manta - 2016</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="20172018Team.html">2017 - 2018 Team</a>'+
+                        '<a href="admare.html">Admare - 2015</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="20132014Team.html">2013 - 2014 Team</a>'+
+                        '<a href="orcus.html">Orcus - 2014</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="campus.html">Campus</a>'+
-                    '</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li class="dropdown">'+
-                '<a href="#" class="dropdown-toggle" data-toggle="dropdown">ROV <b class="caret"></b></a>'+
-                '<ul class="dropdown-menu">'+
-                    '<li>'+
-                        '<a href="casus.html">Casus</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="orcus.html">Orcus</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="admare.html">Admare</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="manta.html">Manta</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href = "Nautilus.html">Nautilus</a>'+
+                        '<a href="casus.html">Casus - 2012</a>'+
                     '</li>'+
                     '<li>'+
                         '<a href="pvcrovs.html">PVC ROVs</a>'+
                     '</li>'+
-                    '<li>'+
-                        '<a href="TechnicalInformation.html">Technical Info</a>'+
-                    '</li>'+
                 '</ul>'+
             '</li>'+
-            '<li class="dropdown">'+
-                '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Events <b class="caret"></b></a>'+
-                '<ul class="dropdown-menu">'+
-                    '<li>'+
-                        '<a href="./eris.html">ERIS</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="./dock_test.html">Dock Testing</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="regional.html">Regional Competition</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="international.html">International Competition</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="birdwatching.html">Bird-watching</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="community.html">UWROV in the community</a>'+
-                    '</li>'+
-                '</ul>'+
+            '<li>'+
+                '<a href="contact.html">Contact Us</a>'+
             '</li>'+
-            '<!--'+
-            '<li class="dropdown">'+
-                '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>'+
-                '<ul class="dropdown-menu">'+
-                    '<li>'+
-                        '<a href="blog-home-1.html">Blog Home 1</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="blog-home-2.html">Blog Home 2</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="blog-post.html">Blog Post</a>'+
-                    '</li>'+
-                '</ul>'+
-            '</li>'+
-            '<li class="dropdown">'+
-                '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Pages <b class="caret"></b></a>'+
-                '<ul class="dropdown-menu">'+
-                    '<li>'+
-                        '<a href="full-width.html">Full Width Page</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="sidebar.html">Sidebar Page</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="faq.html">FAQ</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="404.html">404</a>'+
-                    '</li>'+
-                    '<li>'+
-                        '<a href="pricing.html">Pricing Table</a>'+
-                    '</li>'+
-                '</ul>'+
-            '</li>'+
-            '-->'+
         '</ul>'+
     '</div>'+
     '<!-- /.navbar-collapse -->'+
