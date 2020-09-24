@@ -9,7 +9,7 @@ document.write(
             '<span class="icon-bar"></span>'+
             '<span class="icon-bar"></span>'+
         '</button>'+
-        '<a class="navbar-brand" href="index.html"><span><img class="logo" src="./images/uwrov-logo.png"></span></a>'+
+        '<a class="navbar-brand" href="index"><span><img class="logo" src="./images/uwrov-logo.png"></span></a>'+
     '</div>'+
     '<!-- Collect the nav links, forms, and other content for toggling -->'+
     '<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">'+
@@ -18,39 +18,39 @@ document.write(
                 '<a href="20192020Team">Our Team</a>'+
             '</li>'+
             '<li>'+
-                '<a href="sponsors.html">Sponsors</a>'+
+                '<a href="sponsors">Sponsors</a>'+
             '</li>'+
             '<li>'+
-                '<a href="recruitment.html">Recruitment</a>'+
+                '<a href="recruitment">Recruitment</a>'+
             '</li>'+
             '<li>'+
-                '<a href="community.html">Community</a>'+
+                '<a href="community">Community</a>'+
             '</li>'+
             '<li class="dropdown">'+
                 '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Our ROVs <b class="caret"></b></a>'+
                 '<ul class="dropdown-menu">'+
                     '<li>'+
-                        '<a href = "Nautilus.html">Nautilus - 2019</a>'+
+                        '<a href = "Nautilus">Nautilus - 2019</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="manta.html">Manta - 2016</a>'+
+                        '<a href="manta">Manta - 2016</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="admare.html">Admare - 2015</a>'+
+                        '<a href="admare">Admare - 2015</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="orcus.html">Orcus - 2014</a>'+
+                        '<a href="orcus">Orcus - 2014</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="casus.html">Casus - 2012</a>'+
+                        '<a href="casus">Casus - 2012</a>'+
                     '</li>'+
                     '<li>'+
-                        '<a href="pvcrovs.html">PVC ROVs</a>'+
+                        '<a href="pvcrovs">PVC ROVs</a>'+
                     '</li>'+
                 '</ul>'+
             '</li>'+
             '<li>'+
-                '<a href="contact.html">Contact Us</a>'+
+                '<a href="contact">Contact Us</a>'+
             '</li>'+
         '</ul>'+
     '</div>'+
