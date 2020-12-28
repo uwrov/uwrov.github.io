@@ -15,7 +15,7 @@ document.write(
     '<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">'+
         '<ul class="nav navbar-nav navbar-right">'+
             '<li>'+
-                '<a href="20202021Team">Our Team</a>'+
+                '<a href="2020-2021Team">Our Team</a>'+
             '</li>'+
             '<li>'+
                 '<a href="sponsors">Sponsors</a>'+
